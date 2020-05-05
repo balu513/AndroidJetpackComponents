@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.komal.jetpackcomponentsdemo.view.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_Detail"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/act_list_to_sett"
+            app:destination="@id/settinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.komal.jetpackcomponentsdemo.view.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_List"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_detailFragment_to_settinFragment2"
+            app:destination="@id/settinFragment" />
+        <action
+            android:id="@+id/act_detail_to_setting"
+            app:destination="@id/settinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settinFragment"
+        android:name="com.komal.jetpackcomponentsdemo.view.SettinFragment"
+        android:label="fragment_settin"
+        tools:layout="@layout/fragment_settin" >
+        <action
+            android:id="@+id/action_settinFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_settinFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
